@@ -3,26 +3,22 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-
-    <context:property-placeholder location="com/akshay/spring/springcore/propertyplaceholder/database.properties"/>
-    <!--used to config prop inside spring con-->
-    
 	<bean
-		class="com.akshay.spring.springcore.propertyplaceholder.MyDAO"
-		name="myDAO">
-		<constructor-arg>
-			<value>${dbServer}</value>
+		class="com.akshay.spring.springcoreadvanced.autowiring.Address"
+		name="address" p:hno="123" p:street="Mira meas" p:city="SAN Diago" />
+	
 
-		</constructor-arg>
-	</bean>
-
-
-
+	<!-- injecting address into employee using constructor -->
+	<bean
+		class="com.akshay.spring.springcoreadvanced.autowiring.Employee"
+		name="employee" autowire="constructor" />
 
 </beans>
 
+<!-- by type and byname used Setter injection -->
