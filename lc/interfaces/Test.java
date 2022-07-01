@@ -9,7 +9,7 @@ public class Test {
 		// TODO Auto-generated method stub
 
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
-				"com/akshay/spring/springcore/lc/interfaces/config.xml");
+				"com/akshay/spring/springcore/lc//config.xml");
 		Patient pat = (Patient) context.getBean("patient");
 		System.out.println(pat); // calls toString method
 		

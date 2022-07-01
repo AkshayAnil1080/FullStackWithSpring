@@ -7,13 +7,21 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:property-placeholder location="com/akshay/spring/springcore/propertyplaceholder/database.properties"/>
+    <!--used to config prop inside spring con-->
     
+	<bean
+		class="com.akshay.spring.springcore.propertyplaceholder.MyDAO"
+		name="myDAO">
+		<constructor-arg>
+			<value>${dbServer}</value>
+
+		</constructor-arg>
+	</bean>
 
 
-	<bean name="patient"
-		class="com.akshay.spring.springcore.lc.interfaces.Patient" 
-		p:id="123" 
-		init-method="hi" destroy-method="bye"/>
 
 
 </beans>
